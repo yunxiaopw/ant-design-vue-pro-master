@@ -1,6 +1,6 @@
 <template>
   <a-modal
-    title="新建规则"
+    title="新建通道"
     :width="640"
     :visible="visible"
     :confirmLoading="loading"
@@ -10,11 +10,20 @@
     <a-spin :spinning="loading">
       <a-form :form="form" v-bind="formLayout">
         <!-- 检查是否有 id 并且大于0，大于0是修改。其他是新增，新增不显示主键ID -->
-        <a-form-item v-show="model && model.id > 0" label="主键ID">
-          <a-input v-decorator="['id', { initialValue: 0 }]" disabled />
+        <a-form-item label="通道名称">
+          <a-input />
         </a-form-item>
-        <a-form-item label="描述">
-          <a-input v-decorator="['description', {rules: [{required: true, min: 5, message: '请输入至少五个字符的规则描述！'}]}]" />
+        <a-form-item label="通道位置">
+          <a-input />
+        </a-form-item>
+        <a-form-item label="URL">
+          <a-input />
+        </a-form-item>
+        <a-form-item label="状态">
+          <a-select>
+            <a-select-option value="1">在线</a-select-option>
+            <a-select-option value="2">离线</a-select-option>
+          </a-select>
         </a-form-item>
       </a-form>
     </a-spin>

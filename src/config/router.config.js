@@ -121,6 +121,14 @@ export const asyncRouterMap = [
             hideChildrenInMenu: true,
             component: () => import('@/views/systemManage/networkSetting/index.vue'),
             meta: { title: '网络设置', keepAlive: true }
+          },
+          // 平台设置
+          {
+            path: '/system-manage/platform-setting',
+            name: 'PlatformSetting',
+            hideChildrenInMenu: true,
+            component: () => import('@/views/systemManage/platformSetting/index.vue'),
+            meta: { title: '平台设置', keepAlive: true }
           }
         ]
       },

@@ -1,5 +1,6 @@
 <template>
   <div class="w-100 h-100 overflow-hidden">
+    {{ uniqueId }}
     <!-- <div class="row" style="height: 10px;">
     </div> -->
     <div class="row mx-0">
@@ -27,7 +28,7 @@
         <label class="mr-2" :for="uniqueId+'weekday-selected'+i">星期{{ weekday }}</label>
         <input class="input-check" type="checkbox" v-model="dayStatus[i]" :id="uniqueId+'weekday-selected'+i">
       </div>
-      <div style="margin-bottom: 40px; width: calc(100% - 80px);">
+      <div style="margin-bottom: 40px; width: 552px">
         <div class="d-flex">
           <div
             v-for="(item, j) in new Array(25).fill(0).map((v, i)=>i)"
@@ -75,7 +76,7 @@
           title=""
           :data-content="getDayTimeDesc(i)"
           data-original-title="已设置时间段">
-          <IconFont iconName="icon-xiangxixinxi"></IconFont>
+          <!-- <IconFont iconName="icon-xiangxixinxi"></IconFont> -->
         </a>
       </div>
     </div>
@@ -88,7 +89,7 @@ import $ from 'jquery'
 const TIME_CELL_WIDTH = 8
 
 const WEEKDAY_NUM = 7
-const TIME_CELL_SIZE = 30 // 分钟
+const TIME_CELL_SIZE = 20 // 分钟
 const DAY_CELL_NUM = 24 * 60 / TIME_CELL_SIZE
 const WEEK_CELL_NUMM = WEEKDAY_NUM * DAY_CELL_NUM
 
@@ -125,7 +126,8 @@ export default {
   },
   props: {
     modelValue: {
-      type: String
+      type: String,
+      default: ''
     }
   },
   model: {
@@ -256,7 +258,7 @@ export default {
 
       this.cellStatus[i * this.dayCellNum + j] ^= 1
       this.cellStatus = [...this.cellStatus]
-
+      console.log('this.cellStatus1', this.cellStatus)
       if (this.weekdaySame) {
         this.makeWeekdaySame(this.currDay)
       }
@@ -287,7 +289,7 @@ export default {
         this.cellStatus[i * this.dayCellNum + k] = status
       }
       this.cellStatus = [...this.cellStatus]
-
+      console.log('this.cellStatus2', this.cellStatus)
       if (this.weekdaySame) {
         this.makeWeekdaySame(this.currDay)
       }
@@ -337,7 +339,7 @@ export default {
   },
   mounted () {
     $(function () {
-      $('[data-toggle="popover"]').popover()
+      // $('[data-toggle="popover"]').popover()
     })
   }
 }
@@ -345,7 +347,7 @@ export default {
 
 <style lang="less" scoped>
   .time-tick {
-    width: 481px;
+    width: 576px;
     height: 6px;
     background-image:
       repeating-linear-gradient(to right, #000000 0, #000000 1px, transparent 0, transparent 20px),
@@ -357,7 +359,7 @@ export default {
   .time-bar {
     overflow: hidden;
     white-space: nowrap;
-    width: 481px;
+    width: 576px;
     height: 20px;
     border: 1px solid #000000;
   }
@@ -413,7 +415,7 @@ export default {
   }
   .time-label-sm {
     font-size: 10px;
-    width: calc(100%/24);
+    width: 24px;
     line-height: 16px;
   }
   .time-cell-sm {

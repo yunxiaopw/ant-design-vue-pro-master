@@ -4,12 +4,12 @@
       <div class="table-page-search-wrapper">
         <a-form layout="inline">
           <a-row :gutter="48">
-            <a-col :md="4" :sm="24">
+            <a-col :md="6" :sm="24">
               <a-form-item label="姓名">
                 <a-input placeholder="请输入姓名"></a-input>
               </a-form-item>
             </a-col>
-            <a-col :md="3" :sm="24">
+            <a-col :md="6" :sm="24">
               <a-form-item label="性别">
                 <a-select placeholder="请选择性别">
                   <a-select-option value="0">男</a-select-option>

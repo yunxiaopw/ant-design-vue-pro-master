@@ -166,11 +166,13 @@ export default {
     width: 150px;
     border-right: 1px solid #ccc;
     .top, .bottom {
-      height: 50px;
+      height: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: #0084fa;
+      cursor: pointer;
+      color: #fff;
     }
     .top {
       border-bottom: 1px solid #ccc;
@@ -185,6 +187,9 @@ export default {
       .icon {
         width: 80px;
         margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }

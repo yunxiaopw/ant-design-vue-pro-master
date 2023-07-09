@@ -33,13 +33,13 @@
           <a-card
             class="project-list"
             :loading="loading"
-            style="margin-bottom: 24px;"
+            style="margin-bottom: 54px;"
             :bordered="false"
             title="进行中的项目"
             :body-style="{ padding: 0 }"
           >
             <a slot="extra">全部项目</a>
-            <div>
+            <div style="position: relative;">
               <a-card-grid class="project-card-grid" style="width: 25%;" :key="i" v-for="(item, i) in projects">
                 <a-card :bordered="false" :body-style="{ padding: 0 }">
                   <a-card-meta>
@@ -57,9 +57,9 @@
                   </div>
                 </a-card>
               </a-card-grid>
+              <div class="down-icon"><a-icon type="down" /></div>
             </div>
           </a-card>
-
           <a-card :loading="loading" title="动态" :bordered="false">
             <a-list>
               <a-list-item :key="index" v-for="(item, index) in activities">
@@ -303,6 +303,7 @@ export default {
 @import './Workplace.less';
 
 .project-list {
+  position: relative;
   .card-title {
     font-size: 0;
 
@@ -424,5 +425,21 @@ export default {
   .headerContent .title .welcome-text {
     display: none;
   }
+}
+
+.down-icon {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  // position: absolute;
+  // bottom: -326px;
+  // right: 50%;
+  // transform: translate(-50%);
+  width: calc(100% + 1px);
+  height: 30px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
 }
 </style>
