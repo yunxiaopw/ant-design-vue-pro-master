@@ -222,7 +222,7 @@
           :wrapperCol="{lg: {span: 15}, sm: {span: 17} }">
           <WeekDatetimePicker />
         </a-form-item>
-        <div style="display: flex; justify-content: fle;">
+        <div style="display: flex; justify-content: flex-end;">
           <a-button type="primary">提交</a-button>
         </div>
 
