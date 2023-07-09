@@ -150,12 +150,12 @@ export default {
 .second-part {
   margin-top: 20px;
   display: flex;
+  width: 100%;
+  position: relative;
   .left-container, .right-container {
     width: 50%;
-    // height: 400px;
     border: 1px solid #ccc;
     display: flex;
-    // padding: 10px;
   }
   .left-container {
     margin-right: 10px;
@@ -163,7 +163,7 @@ export default {
   .left-side {
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 140px;
     border-right: 1px solid #ccc;
     .top, .bottom {
       height: 25px;
@@ -185,7 +185,7 @@ export default {
       justify-content: center;
       align-items: center;
       .icon {
-        width: 80px;
+        width: 70px;
         margin-bottom: 30px;
         &:last-child {
           margin-bottom: 0;
@@ -209,8 +209,8 @@ export default {
       }
     }
     .item-icon {
-      min-width: 200px;
-      min-height: 200px;
+      min-width: 180px;
+      min-height: 180px;
       border: 1px solid #ccc;
     }
   }
