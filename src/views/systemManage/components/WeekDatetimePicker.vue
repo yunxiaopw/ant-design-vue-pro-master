@@ -1,6 +1,5 @@
 <template>
   <div class="w-100 h-100 overflow-hidden">
-    {{ uniqueId }}
     <!-- <div class="row" style="height: 10px;">
     </div> -->
     <div class="row mx-0">

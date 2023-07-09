@@ -222,13 +222,16 @@
           :wrapperCol="{lg: {span: 15}, sm: {span: 17} }">
           <WeekDatetimePicker />
         </a-form-item>
+        <div style="display: flex; justify-content: fle;">
+          <a-button type="primary">提交</a-button>
+        </div>
+
       </a-form>
     </a-card>
 
     <!-- fixed footer toolbar -->
-    <footer-tool-bar>
-      <a-button type="primary">提交</a-button>
-    </footer-tool-bar>
+    <!-- <footer-tool-bar>
+    </footer-tool-bar> -->
 
   </page-header-wrapper>
 </template>
@@ -236,11 +239,10 @@
 <script>
 import Info from '../components/Info.vue'
 import moment from 'moment'
-import FooterToolBar from '@/components/FooterToolbar'
 import DelBtn from '@/components/DelBtn'
 import WeekDatetimePicker from '../components/WeekDatetimePicker.vue'
 export default {
-  components: { Info, FooterToolBar, DelBtn, WeekDatetimePicker },
+  components: { Info, DelBtn, WeekDatetimePicker },
   data () {
     return {
       form: {
